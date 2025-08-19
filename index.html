@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurora Jewels | Timeless Elegance, Crafted For You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #121212;
+            --secondary: #ffffff;
+            --accent: #D4AF37;         /* gold */
+            --accent-secondary: #B76E79;
+            --light-bg: #f9f7f5;
+            --dark-bg: #1a1a1a;
+            --text: #333333;
+            --light-text: #777777;
+            --border: #e0e0e0;
+            --shadow-sm: 0 2px 15px rgba(0,0,0,.05);
+            --shadow-md: 0 5px 25px rgba(0,0,0,.1);
+            --shadow-lg: 0 10px 35px rgba(0,0,0,.15);
+            --transition: all .4s cubic-bezier(.165,.84,.44,1);
+            --radius: 8px;
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Montserrat',sans-serif;
+            color:var(--text);
+            line-height:1.6;
+            scroll-behavior:smooth;
+        }
+        h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',serif;font-weight:600}
+        a{text-decoration:none;color:inherit}
+        ul{list-style:none}
+        img{max-width:100%;display:block}
+        .container{width:92%;max-width:1400px;margin:0 auto}
+        section{padding:80px 0;position:relative}
+        .btn{
+            display:inline-flex;align-items:center;justify-content:center;
+            padding:16px 32px;border-radius:var(--radius);font-weight:500;
+            letter-spacing:1px;text-transform:uppercase;font-size:.85rem;
+            transition:var(--transition);cursor:pointer;gap:8px;
+        }
+        .btn-primary{background:var(--accent);color:var(--primary);border:1px solid var(--accent)}
+        .btn-primary:hover{background:transparent;color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+        .btn-outline{background:transparent;color:var(--primary);border:1px solid var(--primary)}
+        .btn-outline:hover{background:var(--primary);color:white;transform:translateY(-3px);box-shadow:var(--shadow-md)}
+        .bg-dark .btn-outline{color:white;border-color:white}
+        .bg-dark .btn-outline:hover{background:white;color:var(--primary)}
+        .shipping-banner{
+            background:var(--primary);color:white;text-align:center;
+            padding:12px 0;font-size:.85rem;position:relative;z-index:1001;
+        }
+        .shipping-banner i{margin-right:8px;color:var(--accent)}
+        .shipping-banner span{color:var(--accent);font-weight:600}
+
+        /* ---------- HEADER / NAV ---------- */
+        header{
+            position:fixed;top:0;left:0;width:100%;
+            padding:20px 0;background:var(--primary);color:white;
+            box-shadow:0 2px 20px rgba(0,0,0,.1);z-index:1000;transition:var(--transition);
+        }
+        .header-container{display:flex;align-items:center;justify-content:space-between}
+        .logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2rem;letter-spacing:1px}
+        .logo span{color:var(--accent)}
+        nav ul{display:flex;align-items:center;gap:20px}
+        nav ul li{position:relative}
+        nav ul li a{
+            font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;
+            padding:8px 10px;border-radius:4px;transition:var(--transition);
+        }
+        nav ul li a:hover{background:var(--accent);color:var(--primary)}
+        .mobile-menu-btn{display:none;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer}
+
+        /* ---------- HERO ---------- */
+        .hero{
+            height:100vh;min-height:800px;display:flex;align-items:center;
+            background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+                       url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            color:white;text-align:left;margin-top:60px;
+        }
+        .hero-content{max-width:700px}
+        .hero h1{font-size:4rem;margin-bottom:20px;line-height:1.1}
+        .hero p{font-size:1.2rem;margin-bottom:30px;opacity:.9}
+        .hero-buttons{display:flex;gap:20px}
+        .hero-badge{
+            display:inline-block;background:var(--accent);color:var(--primary);
+            padding:6px 15px;border-radius:50px;font-size:.8rem;margin-bottom:20px;
+            text-transform:uppercase;letter-spacing:1px;font-weight:600;
+        }
+
+        /* ---------- SECTION HEADERS ---------- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+
+        /* Different section backgrounds */
+        .bg-light {
+            background-color: var(--light-bg);
+        }
+        .bg-dark {
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        /* ---------- FEATURES ---------- */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
+        .feature-card{
+            text-align:center;padding:40px 30px;border-radius:var(--radius);
+            background:white;box-shadow:var(--shadow-sm);transition:var(--transition);
+            opacity:0;transform:translateY(30px)
+        }
+        .feature-card.visible{opacity:1;transform:none}
+        .feature-icon{
+            width:80px;height:80px;background:var(--accent);color:var(--primary);
+            border-radius:50%;display:flex;align-items:center;justify-content:center;
+            font-size:2rem;margin:0 auto 20px;transition:var(--transition)
+        }
+        .feature-card:hover .feature-icon{transform:scale(1.1)}
+        .feature-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+
+        /* ---------- PRODUCTS ---------- */
+        .products {
+            padding: 80px 0;
+            background-color: white;
+        }
+        .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}
+        .product-card{
+            background:white;border-radius:var(--radius);overflow:hidden;
+            box-shadow:var(--shadow-sm);transition:var(--transition);opacity:0;transform:translateY(30px)
+        }
+        .product-card.visible{opacity:1;transform:none}
+        .product-image{height:320px;overflow:hidden;position:relative;cursor:zoom-in}
+        .product-image img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}
+        .product-badge{position:absolute;top:15px;right:15px;background:var(--accent);color:var(--primary);padding:4px 10px;border-radius:50px;font-size:.7rem;font-weight:600}
+        .product-content{padding:25px}
+        .product-title{font-size:1.2rem;margin-bottom:8px;font-weight:600}
+        .product-price{color:var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:10px}
+        .product-rating{color:var(--accent);margin-bottom:10px;font-size:.9rem}
+        .product-card:hover{transform:translateY(-10px);box-shadow:var(--shadow-lg)}
+        .product-card:hover .product-image img{transform:scale(1.05)}
+        .request-price{
+            position:absolute;bottom:-20px;right:25px;width:50px;height:50px;
+            background:var(--accent);color:var(--primary);border-radius:50%;
+            display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);
+            opacity:0;transform:translateY(10px);transition:var(--transition);cursor:pointer
+        }
+        .product-card:hover .request-price{opacity:1;transform:none}
+        .modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.9)}
+        .modal-content{max-width:90%;max-height:90%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+        .close{position:absolute;top:20px;right:30px;color:white;font-size:40px;cursor:pointer}
+
+        /* ---------- ABOUT US ---------- */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .about-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 1/1;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .about-content {
+            padding-top: 20px;
+        }
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .about-mission {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .about-mission h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ---------- BESPOKE ---------- */
+        .bespoke{
+			padding: 80px 0;
+			background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+               url('https://i.ibb.co.com/jPHntNxB/image.png') center/cover;
+			color:white
+		}
+        .bespoke-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .bespoke-content {
+            padding-top: 0;
+        }
+        .bespoke-content h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .process-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .process-step h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        .process-step p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* ---------- TESTIMONIALS ---------- */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        .testimonial-slider{max-width:900px;margin:0 auto;position:relative}
+        .testimonial{
+            background:white;padding:60px;border-radius:var(--radius);box-shadow:var(--shadow-sm);
+            text-align:center;display:none;animation:fadeIn .8s ease
+        }
+        .testimonial.active{display:block}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+        .testimonial-content{font-size:1.2rem;font-style:italic;margin-bottom:30px;position:relative}
+        .testimonial-content::before,.testimonial-content::after{content:'"';font-size:4rem;color:var(--accent);opacity:.2;position:absolute;font-family:serif}
+        .testimonial-content::before{top:-30px;left:-20px}
+        .testimonial-content::after{bottom:-60px;right:-20px}
+        .testimonial-author{display:flex;align-items:center;justify-content:center;gap:20px}
+        .author-image{width:80px;height:80px;border-radius:50%;overflow:hidden;border:3px solid var(--accent)}
+        .slider-controls{display:flex;justify-content:center;margin-top:40px;gap:15px}
+        .slider-dot{width:14px;height:14px;border-radius:50%;background:#ddd;cursor:pointer;transition:var(--transition)}
+        .slider-dot.active{background:var(--accent);transform:scale(1.3)}
+
+        /* ---------- FAQ ---------- */
+        .faq {
+            padding: 80px 0;
+            background-color: white;
+        }
+        .faq-container{max-width:900px;margin:0 auto}
+        .faq-item{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:15px;overflow:hidden}
+        .faq-question{padding:25px;cursor:pointer;display:flex;justify-content:space-between;font-weight:500}
+        .faq-question::after{content:'+';font-size:1.8rem;color:var(--light-text);transition:var(--transition)}
+        .faq-question.active::after{content:'-';color:var(--accent)}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .3s ease;padding:0 25px}
+        .faq-answer.active{max-height:500px;padding:0 25px 25px}
+
+        /* ---------- CTA ---------- */
+        .cta{
+            text-align:center;padding:100px 0;
+            background:linear-gradient(135deg,var(--accent),var(--accent-secondary));
+            color:var(--primary);position:relative;overflow:hidden
+        }
+        .cta h2{font-size:3rem;margin-bottom:20px;position:relative;z-index:2}
+        .cta p{max-width:700px;margin:0 auto 40px;font-size:1.2rem;position:relative;z-index:2}
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .contact-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .contact-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--light-text);
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: white;
+            padding: 60px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        .contact-item{
+            display:flex;align-items:center;margin-bottom:25px;gap:15px;
+            padding: 15px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        .contact-item:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+        .contact-icon{
+            width:50px;height:50px;background:var(--accent);color:var(--primary);
+            border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+            flex-shrink: 0;
+        }
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .contact-form input,.contact-form textarea{
+            width:100%;padding:15px 20px;border:1px solid var(--border);border-radius:var(--radius);
+            font-family:inherit;font-size:1rem;transition:var(--transition)
+        }
+        .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(212,175,55,.2)}
+        .trust-badges{display:flex;gap:15px;margin-top:30px;flex-wrap: wrap;}
+        .trust-badge{height:40px;opacity:.8;transition:var(--transition)}
+        .trust-badge:hover{opacity:1;transform:translateY(-3px)}
+
+        /* ---------- FOOTER ---------- */
+        footer{background:var(--primary);color:white;padding:80px 0 40px}
+        .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:50px;margin-bottom:60px}
+        .footer-col h4{font-size:1.3rem;margin-bottom:25px;position:relative;padding-bottom:15px}
+        .footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:2px;background:var(--accent)}
+        .footer-col ul li{margin-bottom:12px}
+        .footer-col ul li a{opacity:.8;transition:var(--transition);font-size:.95rem}
+        .footer-col ul li a:hover{opacity:1;color:var(--accent);padding-left:8px}
+        .social-links{display:flex;gap:15px;margin-top:25px}
+        .social-link{
+            width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,.1);
+            display:flex;align-items:center;justify-content:center;transition:var(--transition);font-size:1.1rem
+        }
+        .social-link:hover{background:var(--accent);color:var(--primary);transform:translateY(-3px)}
+        .newsletter-form{display:flex;margin-top:20px}
+        .newsletter-form input{flex:1;padding:12px 15px;border:none;border-radius:var(--radius) 0 0 var(--radius);font-family:inherit}
+        .newsletter-form button{background:var(--accent);color:var(--primary);border:none;padding:0 20px;border-radius:0 var(--radius) var(--radius) 0;cursor:pointer}
+        .footer-bottom{text-align:center;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);opacity:.6;font-size:.9rem}
+
+        /* ---------- STICKY / BACK-TO-TOP ---------- */
+        .sticky-cta{
+            position:fixed;bottom:30px;right:30px;background:var(--accent);color:var(--primary);
+            padding:18px 30px;border-radius:50px;font-weight:500;box-shadow:0 10px 30px rgba(212,175,55,.3);
+            z-index:999;transform:translateY(100px);opacity:0;transition:var(--transition);display:flex;align-items:center;gap:10px;font-size:1rem
+        }
+        .sticky-cta.visible{transform:none;opacity:1}
+        .back-to-top{
+            position:fixed;bottom:100px;right:30px;width:60px;height:60px;background:var(--primary);color:white;
+            border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;
+            transition:var(--transition);z-index:999;box-shadow:var(--shadow-md)
+        }
+        .back-to-top.visible{opacity:1;visibility:visible}
+        .back-to-top:hover{background:var(--accent);color:var(--primary);transform:translateY(-5px)}
+
+        /* ---------- RESPONSIVE ---------- */
+        @media(max-width:992px){
+            .hero h1{font-size:3rem}
+            .bespoke-container{grid-template-columns:1fr}
+            .about-container {grid-template-columns: 1fr;}
+            .contact-container {grid-template-columns: 1fr;}
+        }
+        @media(max-width:768px){
+            nav{position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--primary);
+                transform:translateX(100%);opacity:0;transition:var(--transition);display:flex;align-items:center;justify-content:center;z-index:1000}
+            nav.active{transform:none;opacity:1}
+            nav ul{flex-direction:column;gap:25px}
+            .mobile-menu-btn{display:block;z-index:1001}
+            .hero{min-height:700px;text-align:center}
+            .hero-buttons{flex-direction:column;gap:15px}
+            .section-header h2 {font-size: 2rem;}
+        }
+        @media(max-width:576px){
+            .hero h1{font-size:2.5rem}
+            .contact-container {padding: 30px;}
+            .section-header h2 {font-size: 1.8rem;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="container header-container">
+        <a href="#" class="logo">AURORA<span>JEWELS</span></a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+				<li><a href="#about">About Us</a></li>
+                <li><a href="#bespoke">Bespoke Orders</a></li>
+				<li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Pre-Orders</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-badge">New Collection</span>
+            <h1>Your Story Deserves a Sparkle</h1>
+            <p>Hand-crafted fine jewelry designed to last a lifetime. Each piece tells a story of timeless elegance and uncompromising quality.</p>
+            <div class="hero-buttons">
+                <a href="#collections" class="btn btn-primary">View Collection</a>
+                <a href="#contact" class="btn btn-outline">Book Consultation</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features bg-light" id="features">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Aurora Jewels</h2>
+            <p>Discover the difference of true craftsmanship and ethical luxury</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                <h3>Certified Diamonds</h3>
+                <p>Only GIA-certified diamonds selected for exceptional quality and brilliance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-globe"></i></div>
+                <h3>Ethical Sourcing</h3>
+                <p>Responsibly sourced precious metals and conflict-free diamonds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-hammer"></i></div>
+                <h3>Bespoke Craftsmanship</h3>
+                <p>Each piece handcrafted by master jewelers with generations of expertise.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Lifetime Care</h3>
+                <p>Complimentary cleaning, inspection & warranty on every piece.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Collections -->
+<section class="products" id="collections">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Collections</h2>
+            <p>Explore our exquisite selection of handcrafted jewelry pieces</p>
+        </div>
+        <div class="products-grid">
+
+            <!-- 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Solitaire Diamond Ring">
+                    <span class="product-badge">Bestseller</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Solitaire Diamond Ring</h3>
+                    <div class="product-price">From $3,999</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(42)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/S8RTs6W/image.png" alt="Diamond Pendant Necklace">
+                    <span class="product-badge">Limited</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Diamond Pendant Necklace</h3>
+                    <div class="product-price">$2,499</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(28)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Diamond Stud Earrings">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Princess Cut Diamond Earrings</h3>
+                    <div class="product-price">$1,799</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(36)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/7t23bNJP/image.png" alt="Platinum Wedding Band">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Platinum Wedding Band Set</h3>
+                    <div class="product-price">$4,299</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(19)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/WNHyjVGP/image.png" alt="Diamond Tennis Bracelet">
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Diamond Tennis Bracelet</h3>
+                    <div class="product-price">$5,499</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(24)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/CfvdV8x/image.png" alt="Rose Gold Necklace">
+                    <span class="product-badge">Exclusive</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Rose Gold Diamond Necklace</h3>
+                    <div class="product-price">$3,199</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(31)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/MxgZVLg9/image.png" alt="Classic Wedding Band">
+                    <span class="product-badge">Popular</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Classic Platinum Wedding Band</h3>
+                    <div class="product-price">$1,899</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(27)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.ibb.co.com/wF7wtQPJ/image.png" alt="Diamond Halo Earrings">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Diamond Halo Earrings</h3>
+                    <div class="product-price">$2,799</div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(18)</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- About Us -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Story</h2>
+            <p>Discover the heritage and passion behind Aurora Jewels</p>
+        </div>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://i.ibb.co.com/21jbGgnV/image.png" alt="Aurora Jewels Workshop">
+            </div>
+            <div class="about-content">
+                <h2>Timeless Craftsmanship Since 1985</h2>
+                <p>Founded in New York City by master jeweler Antonio Moretti, Aurora Jewels began as a small atelier dedicated to creating bespoke pieces for discerning clients. What started as a passion project quickly grew into a renowned destination for exceptional jewelry.</p>
+                <p>Today, under the leadership of Antonio's daughter Sophia Moretti, we continue the tradition of excellence while embracing modern design sensibilities. Our team of artisans combines centuries-old techniques with contemporary innovation to create pieces that stand the test of time.</p>
+                
+                <div class="about-mission">
+                    <h3>Our Mission</h3>
+                    <p>To create heirloom-quality jewelry that tells your unique story through exceptional craftsmanship, ethical sourcing, and personalized service. We believe fine jewelry should be as meaningful as it is beautiful.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bespoke -->
+<section class="bespoke" id="bespoke">
+    <div class="container">
+        <div class="bespoke-container">
+            <div class="bespoke-content">
+                <h2>Bespoke Creations & Exclusive Pre-Orders</h2>
+                <p>Create a one-of-a-kind piece that tells your unique story. Our master jewelers will guide you through every step of the custom design process.</p>
+                <br><div class="process-step">
+                    <div class="step-number">1</div>
+                    <div><h4>Consultation</h4><p>Private meeting to discuss your vision, preferences, and budget.</p></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div><h4>Design</h4><p>Our designers create sketches and 3D renderings for your approval.</p></div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div><h4>Craftsmanship</h4><p>Master jewelers hand-craft your piece with precision and care.</p></div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Start Your Custom Order</a>
+            </div>
+            <div class="bespoke-image">
+                <img src="https://i.ibb.co.com/sJJ7rKSv/image.png" alt="Custom jewelry">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Client Stories</h2>
+            <p>Hear from our cherished clients about their Aurora Jewels experience</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <div class="testimonial-content">
+                    The engagement ring Aurora Jewels created was beyond anything we imagined. The diamond quality is exceptional and the whole process seamless. She said yes before I finished the question!
+                </div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="James Wilson">
+                    </div>
+                    <div class="author-info">
+                        <h4>James Wilson</h4><p>Engagement Ring Client</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    I commissioned a custom necklace for my daughter's birth. They incorporated her birthstone beautifully; the craftsmanship is impeccable. It's now a family heirloom.
+                </div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Sophia Martinez">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sophia Martinez</h4><p>Custom Necklace Client</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    Our wedding bands are absolute perfection. Unique, personal and still drawing compliments a year later. Aurora Jewels made the process effortless.
+                </div>
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Emma & David Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Emma & David Chen</h4><p>Wedding Band Clients</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq bg-light" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our jewelry and services</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Do you offer certified diamonds?</div>
+                <div class="faq-answer">
+                    <p>Yes, all our diamonds are GIA-certified, ensuring you receive the highest quality stones with verified characteristics.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How does the bespoke process work?</div>
+                <div class="faq-answer">
+                    <p>After a private consultation, our designers create sketches/3D renders, then master jewelers hand-craft your piece. Timeline: 4-8 weeks.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I preorder upcoming designs?</div>
+                <div class="faq-answer">
+                    <p>Absolutely. Pre-orders require a 30% deposit and secure early-access pricing on limited-edition pieces.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the warranty on your jewelry?</div>
+                <div class="faq-answer">
+                    <p>Every piece carries a lifetime craftsmanship warranty plus complimentary annual cleaning and inspection.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer international delivery?</div>
+                <div class="faq-answer">
+                    <p>Yes. We ship worldwide with fully-insured express delivery. All customs paperwork is handled for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Make Every Moment Sparkle</h2>
+        <p>Book a private consultation or explore our luxury collections today. Our jewelry specialists are ready to help.</p>
+        <a href="#contact" class="btn btn-outline">Book Consultation</a>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-header">
+            <h2>Schedule Your Private Consultation</h2>
+            <p>Our jewelry specialists are ready to assist you with any inquiries or custom requests</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">5 Diamond Avenue, Jewelry District, NY 10001</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">+1 (212) 555-0100</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">concierge@aurorajewels.com</div>
+                </div>
+                <h3>Showroom Hours</h3>
+                <p>Mon–Fri: 10 AM – 6 PM<br>Sat: 11 AM – 5 PM<br>Sun: by appointment</p>
+                <div class="trust-badges">
+                    <img src="https://i.ibb.co.com/0RZgvv7x/image.png" alt="GIA Certified" class="trust-badge">
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="Your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label>How can we help you?</label>
+                        <textarea name="message" placeholder="Tell us about your jewelry needs" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col footer-about">
+                <h4>Aurora Jewels</h4>
+                <p>Crafting timeless fine jewelry with uncompromising quality, designed to become cherished heirlooms.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#">Engagement Rings</a></li>
+                    <li><a href="#">Wedding Bands</a></li>
+                    <li><a href="#">Necklaces</a></li>
+                    <li><a href="#">Earrings</a></li>
+                    <li><a href="#">Bracelets</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#bespoke">Bespoke Orders</a></li>
+                    <li><a href="#contact">Pre-Orders</a></li>
+                    <li><a href="#">Jewelry Care</a></li>
+                    <li><a href="#">Ring Sizing</a></li>
+                    <li><a href="#">Repairs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive previews, styling tips, and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Aurora Jewels. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Sticky CTA -->
+<a href="#contact" class="sticky-cta" id="stickyCta">
+    <i class="fas fa-calendar-alt"></i> Book Consultation
+</a>
+
+<!-- Back to Top -->
+<a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Modal for image zoom -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="zoomedImage">
+</div>
+
+<script>
+/* Mobile Menu Toggle */
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav = document.getElementById('mainNav');
+mobileMenuBtn.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+    mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : 'auto';
+});
+
+/* Smooth scroll links */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        if(this.getAttribute('href') === '#') return;
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) window.scrollTo({top: target.offsetTop - 80, behavior: 'smooth'});
+    });
+});
+
+/* Sticky CTA & Back-to-Top */
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    document.getElementById('stickyCta').classList.toggle('visible', y > 500);
+    document.getElementById('backToTop').classList.toggle('visible', y > 800);
+});
+
+/* Testimonial slider */
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.slider-dot');
+let currentSlide = 0;
+function showSlide(n){
+    testimonials.forEach(t => t.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    testimonials[n].classList.add('active');
+    dots[n].classList.add('active');
+    currentSlide = n;
+}
+dots.forEach((dot,idx) => dot.addEventListener('click', () => showSlide(idx)));
+setInterval(() => showSlide((currentSlide + 1) % testimonials.length), 6000);
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        const answer = q.nextElementSibling;
+        answer.classList.toggle('active');
+        answer.style.maxHeight = answer.classList.contains('active') ? answer.scrollHeight + 'px' : null;
+    });
+});
+
+/* Animate on scroll */
+function animateOnScroll(){
+    document.querySelectorAll('.feature-card, .product-card').forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight * 0.8) el.classList.add('visible');
+    });
+}
+window.addEventListener('scroll', animateOnScroll);
+animateOnScroll();
+
+/* Contact form */
+document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thank you! Our specialist will contact you shortly.');
+    e.target.reset();
+});
+
+/* Image zoom */
+document.querySelectorAll('.product-image img').forEach(img => {
+    img.addEventListener('click', () => {
+        document.getElementById('zoomedImage').src = img.src;
+        document.getElementById('imageModal').style.display = 'block';
+    });
+});
+document.querySelector('.close').addEventListener('click', () => document.getElementById('imageModal').style.display = 'none');
+
+/* Year auto-update */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
